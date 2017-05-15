@@ -15,23 +15,11 @@ class DataSampling(object):
         return clean_df
 
     @staticmethod
-    def _get_features_target():
-        p = PreprocessData()
-        features, labels = p.create_dataframe()
+    def simulate_smote(features, labels):
+        # logging.info('Original dataset shape {}'.format(Counter(labels)))
 
-        return features, labels
-
-    def simulate_smote(self):
-        features, labels = self._get_features_target()
-        logging.info('Original dataset shape {}'.format(Counter(labels)))
-
-        sm = SMOTE(random_state=42)
+        sm = SMOTE()
         features_res, labels_res = sm.fit_sample(features, labels)
-        logging.info('Resampled dataset shape {}'.format(Counter(labels_res)))
+        # logging.info('Resampled dataset shape {}'.format(Counter(labels_res)))
 
         return features_res, labels_res
-
-
-if __name__ == '__main__':
-    s = DataSampling()
-    s.simulate_smote()
