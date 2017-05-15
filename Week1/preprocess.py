@@ -59,6 +59,10 @@ class PreprocessData(object):
         return clean_df_non_ref
 
     def encode_cat_to_labels(self):
+        """
+        Performs one-hot encoding using Pandas' .get_dummies() method
+        :return: one-hot encoded features
+        """
         clean_df = self.remove_refused()
         e = EncodeLabel()
         clean_df_one_hot = e.encode_one_hot(clean_df=clean_df, cols=self.cols_to_convert)
@@ -66,6 +70,11 @@ class PreprocessData(object):
         return clean_df_one_hot
 
     def encode_target_label(self, target_col):
+        """
+        Encodes the categorical target column into integer type
+        :param target_col: Integer encoded target column array
+        :return: 
+        """
         e = EncodeLabel()
         target_labels = e.encode_label(target_col)
 
