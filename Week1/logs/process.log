@@ -1,8 +1,0 @@
-INFO:root:The count of labels in the processed dataset:
-DEBUG:root:Settled       223165
-Chargeback       345
-dtype: int64
-INFO:root:Percentage of labels:
-DEBUG:root:Settled       0.998456
-Chargeback    0.001544
-dtype: float64
