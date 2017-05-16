@@ -36,4 +36,4 @@ class FeatureExtraction(object):
 
 if __name__ == '__main__':
     f = FeatureExtraction()
-    f.aggregate_email()
+    f.get_new_features()

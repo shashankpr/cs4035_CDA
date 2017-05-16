@@ -267,6 +267,11 @@ class Classifier(object):
         print cross_scores_ensemble
         print "Mean Cross validation recall score = {}" .format(np.mean(cross_scores_ensemble))
 
-# if __name__ == '__main__':
-#     c = Classifier()
-#     c.run_neural_network()
+if __name__ == '__main__':
+    c = Classifier()
+    # Run White Box model
+    c.run_decision_trees()
+
+    # Run BlackBox model
+    c.run_adaBoost()
+    c.run_majority_voting()

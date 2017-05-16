@@ -107,8 +107,8 @@ class Plots(object):
 
         ada = AdaBoostClassifier(n_estimators=100)
 
-        classifiers = {'DecisionTree': tree, 'AdaBoost': ada}
-        classifiers = {'Forest Ensemble': rf}
+        classifiers = {'DecisionTree': tree, 'AdaBoost': ada, 'Voting Ensemble': voting_clf}
+        # classifiers = {'Forest Ensemble': rf}
         for name, clf in classifiers.items():
             clf.fit(X_pca_transf_train, y_train_resampled)
             predict_ = clf.predict(X_pca_transf_test)
@@ -126,5 +126,5 @@ if __name__ == '__main__':
     X_train_resampled, y_train_resampled, X_test, y_test = c.get_data_for_classifier()
     p = Plots(X_train_resampled, y_train_resampled, X_test, y_test)
 
-    # p.plot_roc()
+    p.plot_roc()
     p.plot_conf_matrix()
