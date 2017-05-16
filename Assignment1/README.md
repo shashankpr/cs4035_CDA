@@ -4,6 +4,8 @@ To run code in this repository, first install all the requirements using:
 ```commandline
 pip install -r requirements.txt
 ```
+- Extract the _data_for_student_case.csv.zip_
+- Run _classifiers.py_ to run the whitebox and blackbox models specified in the report
 
 Alternatively, you can activate _virtualenv_ and then install the requirements:
 
