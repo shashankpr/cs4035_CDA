@@ -18,7 +18,7 @@ class DataSampling(object):
     def simulate_smote(features, labels):
         # logging.info('Original dataset shape {}'.format(Counter(labels)))
 
-        sm = SMOTE()
+        sm = SMOTE(random_state=0)
         features_res, labels_res = sm.fit_sample(features, labels)
         # logging.info('Resampled dataset shape {}'.format(Counter(labels_res)))
 
