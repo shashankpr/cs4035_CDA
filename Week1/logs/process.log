@@ -1,0 +1,18 @@
+INFO:root:The count of labels in the processed dataset:
+DEBUG:root:Settled       223165
+Chargeback       345
+dtype: int64
+INFO:root:Percentage of labels:
+DEBUG:root:Settled       0.998456
+Chargeback    0.001544
+dtype: float64
+DEBUG:root:DataFrame Info:None 
+INFO:root:Original dataset shape Counter({1: 223165, 0: 345})
+INFO:imblearn.base:Compute classes statistics ...
+DEBUG:imblearn.base:The number of classes is 2
+DEBUG:imblearn.base:Shall we raise a warning: False
+INFO:imblearn.base:2 classes detected: Counter({1: 223165, 0: 345})
+DEBUG:imblearn.base:Finding the 5 nearest neighbours ...
+DEBUG:imblearn.base:Create synthetic samples ...
+INFO:imblearn.base:Generated 222820 new samples ...
+INFO:root:Resampled dataset shape Counter({0: 223165, 1: 223165})
