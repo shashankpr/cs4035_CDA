@@ -22,7 +22,7 @@ def get_train_test(features, labels):
     return x_train, x_test, y_train, y_test
 
 
-def cross_validation(x_train, y_train):
+def run_cross_validation(x_train, y_train):
     kcv = KFold(n_splits=10)
     clf = RandomForestClassifier(random_state=42)
     cross_scores = cross_val_score(clf, x_train, y_train, cv=kcv, scoring='accuracy')
@@ -74,5 +74,14 @@ if __name__ == '__main__':
 
     x_train, x_test, y_train, y_test = get_train_test(features, labels)
     predicted, pred_scores = run_random_forest(x_train, x_test, y_train, y_test)
+
+    # For cross-validation
+    # cross_score = run_cross_validation(x_train, y_train)
+
+    # For packet-level flow
+    # one_hot_df = packet_level_features.encode_categorical(processed_df)
+    # features, labels = feature_extraction.build_training_set(one_hot_df)
+    # x_train, x_test, y_train, y_test = get_train_test(features, labels)
+    # predicted, pred_scores = run_random_forest(x_train, x_test, y_train, y_test)
 
     full_metric_report(y_test, predicted)
